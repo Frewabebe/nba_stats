@@ -1,0 +1,28 @@
+Select *
+From Players
+where team = "NYK";
+
+Select *
+From players
+where team = "IND" and age < 26;
+
+Select *
+From players
+order by points asc
+
+Select name, (points/game) as pointspergame
+From Players
+where points in(Select distinct top(20) points
+                  From players
+                  Order by points asc);
+
+Select Avg(age)
+From players;
+
+Select Avg(age)
+From players
+where team = "OKC";
+
+Select Avg(age)
+From players
+where games > 40;
